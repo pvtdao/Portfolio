@@ -1,13 +1,55 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: inherit;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.custom-cursor-dark {
+  cursor: url("./asset/images/cursor_dark.png"), auto;
+  cursor: -webkit-image-set(url("./asset/images/cursor_dark.png") 1x,
+      url("./asset/images/cursor_dark.png") 2x),
+    auto;
+}
+
+
+.custom-cursor-white {
+  cursor: url("./asset/images/cursor_white.png"), auto;
+  cursor: -webkit-image-set(url("./asset/images/cursor_white.png") 4 12,
+      url("./asset/images/cursor_white.png") 4 15),
+    auto;
+}
+
+@font-face {
+  font-family: 'K26';
+  src: url('./asset/fonts/K26/K26ToyBlocks123.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroylight';
+  src: url('./asset/fonts/GilroyFont/gilroy-light-webfont.woff') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.container {
+  @apply px-8 md:px-10 2xl:px-44;
 }
