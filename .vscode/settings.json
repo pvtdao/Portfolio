@@ -1,4 +1,5 @@
 {
 	"typescript.format.enable": true,
-	"editor.formatOnSave": false
+	"editor.formatOnSave": false,
+	"prettier.tabWidth": 4
 }

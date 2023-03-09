@@ -4,18 +4,18 @@
 
 .intro {
     font-family: 'Montserrat', sans-serif;
-
+    cursor: alias;
     @apply fixed h-[100vh] w-full top-0 left-0 z-50 min-h-full lg:min-h-0;
 }
 
 .intro__container {
-    @apply flex flex-col h-full justify-around select-none relative md:h-auto top-1/2 left-1/2 w-full text-center  ;
+    @apply flex h-full flex-col items-center md:flex-row justify-around select-none relative md:h-auto top-1/2 left-1/2 w-full text-center  ;
     transform: translate(-50%, -50%);
 }
 
 .intro__content {
     font-family: "K26", sans-serif;
-    @apply justify-self-center inline-block ml-0 overflow-hidden;
+    @apply justify-self-center inline-block ml-0 overflow-hidden p-3;
 }
 
 .intro__text {
@@ -28,13 +28,13 @@
 }
 
 .intro__text:hover{
-    cursor: url("../../asset/images/cursor_dark.png")
-    16 0,  auto; /*!emojicursor.app*/
+    /* cursor: url("../../asset/images/cursor_dark.png")
+    16 0,  auto;  */
 
-    -webkit-text-stroke: 2px #000;
-    -webkit-text-fill-color: #fff; /*gecko*/ /*IE10*/ /*opera 11.10+*/
-    -pie-transition: all 0.5s ease-out; /*PIE*/
-    transition: all 0.5s ease-out;
+    /* -webkit-text-stroke: 2px #000;
+    -webkit-text-fill-color: #fff; 
+    -pie-transition: all 0.5s ease-out; 
+    transition: all 0.5s ease-out; */
 }
 
 .part-1 {
@@ -95,14 +95,14 @@
 }
 
 .intro__next{
-    @apply absolute left-1/2 p-10 pb-4 top-[80%] md:top-[55%] -translate-x-1/2 md:left-[90%] flex flex-col-reverse justify-end opacity-100 md:-translate-y-1/2 rotate-90 md:rotate-0;
+    @apply absolute left-1/2 p-10 pb-4 top-[70%] md:top-[55%] -translate-x-1/2 md:left-[90%] flex flex-col-reverse justify-end opacity-100 md:-translate-y-1/2 rotate-90 md:rotate-0;
     transition: background-color 0.3s linear;
 
-    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='70' height='48' viewport='0 0 100 100' ><text y='50%' fill='white' font-family='gilroylight'>Let's go</text></svg>") 16 0,auto;
+    /* cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='70' height='48' viewport='0 0 100 100' ><text y='50%' fill='white' font-family='gilroylight'>Let's go</text></svg>") 16 0,auto; */
 }
 
 .intro__next:hover{
-    opacity: 0;
+    /* opacity: 0; */
     transition: .2s linear;
 }
 
@@ -124,4 +124,8 @@
     -webkit-text-fill-color: #fff;
     @apply absolute text-[2rem] top-[20px] animate-slide-out; 
     animation-duration: 3s;
+}
+
+.cursor-intro{
+    @apply fixed top-0 left-0 h-8 w-8 rounded-full bg-white pointer-events-none;
 }
