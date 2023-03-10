@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { FaLongArrowAltRight } from "react-icons/fa"
 import "./intro.css"
 import { motion, Variants } from "framer-motion"
+import { useMousePosition } from "../../hooks/useMousePosition"
 
 function Intro({
     setHasIntro,
@@ -12,30 +13,13 @@ function Intro({
 }) {
     const [slideIntro, setSlideIntro] = useState<boolean>(false)
 
-    const [mousePosition, setMousePosition] = useState({
-        x: 0,
-        y: 0
-    })
     const [cursorAnimate, setCursorAnimate] = useState("default")
-
-    function mouseMove(e: MouseEvent) {
-        setMousePosition({
-            x: e.clientX,
-            y: e.clientY
-        })
-    }
-
-    useEffect(() => {
-        window.addEventListener("mousemove", mouseMove)
-
-        return () => {
-            window.removeEventListener("mousemove", mouseMove)
-        }
-    }, [])
+    const {mousePosition} = useMousePosition()
 
     function handleNext() {
         setSlideIntro(true)
         setHasIntro(false)
+        setCursorAnimate("default")
     }
 
     const variants: Variants = {

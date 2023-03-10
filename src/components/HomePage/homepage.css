@@ -10,3 +10,7 @@
     font-family: 'K26';
     @apply text-6xl cursor-pointer;
 }
+
+.cursor-homepage{
+    @apply fixed top-0 left-0 h-8 w-8 rounded-full bg-black pointer-events-none;
+}

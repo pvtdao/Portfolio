@@ -18,7 +18,7 @@ function App() {
 	}, [hasIntro])
 
 	return (
-		<div className='custom-cursor-dark'>
+		<div className=''>
 			<div
 				className='fixed 
 					z-[999]
