@@ -2,15 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+.homepage{
+    /* background-color: red; */
+}
+
 .header{
     font-family: 'gilroylight';
 }
 
 .logo{
     font-family: 'K26';
-    @apply text-6xl cursor-pointer;
+    @apply text-6xl md:text-7xl text-black cursor-none;
 }
 
 .cursor-homepage{
-    @apply fixed top-0 left-0 h-8 w-8 rounded-full bg-black pointer-events-none;
+    @apply fixed top-0 left-0 h-8 w-8 rounded-full pointer-events-none;
+}
+
+.introduction{
+    @apply relative min-h-[90vh] 2xl:min-h-[700px] flex items-center justify-center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.introduction-content{
+    @apply md:w-[70%] mx-auto;
+}
+
+.content-text{
+    @apply text-[2rem] md:text-[3.5rem] pt-10 font-light leading-[3.5rem] md:leading-[5rem];
+}
+
+.scroll-icon {
+    @apply h-full mx-auto mt-10 p-[8px] w-8 h-8 border-b-black border-r-black border border-t-0 border-l-0 rotate-45;
 }
