@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
 import { BrowserView } from 'react-device-detect'
+import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header/Header'
 import HomePage from './components/HomePage/HomePage'
 import Intro from './components/Intro/Intro'
+import Project from './components/Project/Project'
 import { useMousePosition } from './hooks/useMousePosition'
 import { getVariants } from './utils/constant'
 
@@ -19,7 +21,7 @@ function App() {
 		if (!hasIntro)
 			timerId = setTimeout(() => {
 				if (introRef) introRef.current!.style.display = 'none'
-			}, 2500)
+			}, 2000)
 
 		return () => {
 			clearTimeout(timerId)
@@ -35,7 +37,7 @@ function App() {
 	}
 
 	return (
-		<div className=''>
+		<React.Fragment>
 			<div
 				className='fixed 
 					z-[999]
@@ -45,7 +47,7 @@ function App() {
 			</div>
 			<Intro introRef={introRef} setHasIntro={setHasIntro} />
 			<div
-				className={`wrapper bg-white min-h-screen min-h-[1000px] relative ${
+				className={`wrapper bg-white min-h-screen relative ${
 					hasIntro ? 'hidden' : 'block'
 				}`}
 			>
@@ -53,10 +55,27 @@ function App() {
 					changeCursorAnimate={changeCursorAnimate}
 					leave={leave}
 				/>
-				<HomePage
-					changeCursorAnimate={changeCursorAnimate}
-					leave={leave}
-				/>
+				<Routes>
+					<Route
+						path='/'
+						element={
+							<HomePage
+								changeCursorAnimate={changeCursorAnimate}
+								leave={leave}
+							/>
+						}
+					/>
+					<Route
+						path='/projects'
+						element={
+							<Project
+								changeCursorAnimate={changeCursorAnimate}
+								leave={leave}
+							/>
+						}
+					/>
+				</Routes>
+
 				<BrowserView>
 					<motion.div
 						style={{
@@ -69,7 +88,7 @@ function App() {
 					></motion.div>
 				</BrowserView>
 			</div>
-		</div>
+		</React.Fragment>
 	)
 }
 

@@ -18,15 +18,15 @@ type HeaderPropsType = {
 }
 function Header({ changeCursorAnimate, leave }: HeaderPropsType) {
 	return (
-		<>
-			<header className='z-10 header pt-10 py-9 container mx-auto item-center left-0 right-0 fixed w-full flex justify-between'>
-				<div
+		<section className='bg-white z-10 left-0 right-0 fixed'>
+			<header className=' header pt-10 py-9 container mx-auto item-center w-full flex justify-between'>
+				<Link to={'/'}
 					className='logo'
 					onMouseEnter={() => changeCursorAnimate('logo')}
 					onMouseLeave={leave}
 				>
 					PVTD
-				</div>
+				</Link>
 				<ul
 					onMouseEnter={() => changeCursorAnimate('logo')}
 					onMouseLeave={leave}
@@ -42,7 +42,7 @@ function Header({ changeCursorAnimate, leave }: HeaderPropsType) {
 					))}
 				</ul>
 			</header>
-		</>
+		</section>
 	)
 }
 

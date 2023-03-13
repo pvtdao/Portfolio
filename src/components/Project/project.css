@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.img-track {
+    @apply flex gap-[4vmin] absolute left-1/2 top-1/3 select-none;
+    transform: translate(0%, 0)
+}
+
+.img-track>.img-item {
+    @apply w-[40vmin] h-[56vmin] object-cover object-center select-none;
+    object-position: 100% center;
+}
