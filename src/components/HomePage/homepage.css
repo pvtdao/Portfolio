@@ -20,7 +20,7 @@
 }
 
 .introduction{
-    @apply relative min-h-[90vh] 2xl:min-h-[700px] flex items-center justify-center;
+    @apply relative min-h-[80vh] flex items-center justify-center;
     font-family: "Montserrat", sans-serif;
 }
 

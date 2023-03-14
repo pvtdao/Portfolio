@@ -18,6 +18,7 @@ type ProjectPropsType = {
 function Project({ changeCursorAnimate, leave }: ProjectPropsType) {
 	const trackRef = useRef<HTMLDivElement | null>(null)
 
+	// REFERENCE: https://www.youtube.com/watch?v=PkADl0HubMY (camilemomarle.com)
 	function handleOnDown(e: any) {
 		if (trackRef.current) {
 			trackRef.current!.dataset.mouseDownAt = e.clientX
@@ -42,9 +43,7 @@ function Project({ changeCursorAnimate, leave }: ProjectPropsType) {
 				-100
 			)
 
-		trackRef.current!.dataset.percentage = nextPercentage.toString()
-
-		console.log(trackRef.current!.getElementsByClassName('img-item'))
+		trackRef.current!.dataset.percentage = nextPercentageUnconstrained.toString()
 
 		trackRef.current!.animate(
 			{
@@ -58,7 +57,7 @@ function Project({ changeCursorAnimate, leave }: ProjectPropsType) {
 		)) {
 			image.animate(
 				{
-					objectPosition: `${100 + nextPercentage}% center`
+					objectPosition: `${105+ nextPercentage}% center`
 				},
 				{ duration: 1200, fill: 'forwards' }
 			)
@@ -78,7 +77,7 @@ function Project({ changeCursorAnimate, leave }: ProjectPropsType) {
 			onMouseDown={(e) => handleOnDown(e)}
 			onMouseMove={(e) => handleOnMove(e)}
 			onMouseUp={(e) => handleOnMouseUp(e)}
-			className='homepage relative pt-[100px] h-screen w-screen m-0 overflow-hidden select-none'
+			className='relative pt-[100px] m-0 select-none overflow-hidden h-screen w-screen'
 		>
 			<div
 				data-mouse-down-at='0'
