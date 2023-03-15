@@ -15,6 +15,14 @@ export function getVariants(mousePosition: { x: number; y: number }) {
 			backgroundColor: 'white',
 			mixBlendMode: 'difference'
 		},
+		'text-lg': {
+			height: 150,
+			width: 150,
+			x: mousePosition.x - 75,
+			y: mousePosition.y - 75,
+			backgroundColor: 'white',
+			mixBlendMode: 'difference'
+		},
 		text: {
 			height: 120,
 			width: 120,
@@ -37,7 +45,16 @@ export function getVariants(mousePosition: { x: number; y: number }) {
 			x: mousePosition.x - 35,
 			y: mousePosition.y - 35,
 			backgroundColor: 'white',
-			mixBlendMode: 'difference',
+			mixBlendMode: 'difference'
+		},
+		'img-project': {
+			opacity: 1,
+			height: 80,
+			width: 80,
+			x: mousePosition.x - 40,
+			y: mousePosition.y - 40,
+			backgroundColor: 'black',
+			fontSize: '2rem !important',
 		}
 	}
 	return variants

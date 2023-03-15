@@ -12,7 +12,13 @@ import { getVariants } from './utils/constant'
 function App() {
 	const [hasIntro, setHasIntro] = useState<boolean>(true)
 	const introRef = useRef<HTMLDivElement>(null)
+
 	const [cursorAnimate, setCursorAnimate] = useState('default')
+	const [cursorText, setCursorText] = useState({
+		text: '',
+		fontSize: '1.6rem'
+	})
+
 	const { mousePosition } = useMousePosition()
 	const variants = getVariants(mousePosition)
 
@@ -32,8 +38,19 @@ function App() {
 		setCursorAnimate(type)
 	}
 
+	function changeCursorText(text: string, fontSize = '1.6rem') {
+		setCursorText({
+			text,
+			fontSize
+		})
+	}
+
 	function leave() {
-		return setCursorAnimate('default')
+		setCursorText({
+			text: '',
+			fontSize: '1.6rem'
+		})
+		setCursorAnimate('default')
 	}
 
 	return (
@@ -71,6 +88,7 @@ function App() {
 							<Project
 								changeCursorAnimate={changeCursorAnimate}
 								leave={leave}
+								changeCursorText={changeCursorText}
 							/>
 						}
 					/>
@@ -84,8 +102,19 @@ function App() {
 						}}
 						variants={variants}
 						animate={cursorAnimate}
-						className='cursor-homepage'
-					></motion.div>
+						className='cursor-homepage flex items-center justify-center'
+					>
+						<span
+							className={`font-semibold`}
+							style={{
+								fontFamily: 'gilroylight',
+								color: 'white',
+								fontSize: cursorText.fontSize
+							}}
+						>
+							{cursorText.text}
+						</span>
+					</motion.div>
 				</BrowserView>
 			</div>
 		</React.Fragment>
