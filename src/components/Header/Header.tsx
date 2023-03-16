@@ -18,8 +18,8 @@ type HeaderPropsType = {
 }
 function Header({ changeCursorAnimate, leave }: HeaderPropsType) {
 	return (
-		<section className='bg-white z-10 left-0 right-0 fixed'>
-			<header className=' header pt-10 py-9 container mx-auto item-center w-full flex justify-between'>
+		<section className='header bg-white z-10 left-0 right-0 fixed'>
+			<header className='pt-10 py-9 container mx-auto item-center w-full flex justify-between'>
 				<Link to={'/'}
 					className='logo'
 					onMouseEnter={() => changeCursorAnimate('logo')}

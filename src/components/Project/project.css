@@ -7,20 +7,16 @@
 }
 
 .project-track {
-    @apply flex gap-[4vmin] absolute left-1/2 top-1/3 select-none;
+    @apply flex flex-col lg:flex-row w-full lg:w-max gap-[5rem] lg:gap-[4vmin] relative lg:absolute lg:left-1/2 lg:top-1/3 select-none;
     transform: translate(0%, 0);
-    width: max-content;
 }
 
 .project-track>.project-item {
-    @apply w-[40vmin] h-[56vmin] relative select-none relative;
-    object-position: 0 center;
-    border: .5px solid rgba(0, 0, 0, .09)
+    @apply lg:w-[38vmin] lg:h-[56vmin] relative select-none relative border-[0.5px] border-[rgba(0,0,0,.3)] lg:border-[rgba(0,0,0,.09)];
 }
 
 .project-img {
-    @apply w-[40vmin] h-[56vmin] relative select-none object-cover;
-    object-position: 100% center;
+    @apply relative select-none object-cover lg:object-full-center;
 }
 
 .project-info {

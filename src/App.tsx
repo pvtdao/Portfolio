@@ -1,13 +1,19 @@
 import { motion } from 'framer-motion'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { BrowserView } from 'react-device-detect'
 import { Route, Routes } from 'react-router-dom'
+import Contact from './components/Contact/Contact'
 import Header from './components/Header/Header'
 import HomePage from './components/HomePage/HomePage'
 import Intro from './components/Intro/Intro'
-import Project from './components/Project/Project'
 import { useMousePosition } from './hooks/useMousePosition'
 import { getVariants } from './utils/constant'
+
+const ProjectComponent = React.lazy(
+	() => import('./components/Project/Project')
+)
+
+// TODO: load image to slow (fix it)
 
 function App() {
 	const [hasIntro, setHasIntro] = useState<boolean>(true)
@@ -85,11 +91,23 @@ function App() {
 					<Route
 						path='/projects'
 						element={
-							<Project
+							<Suspense fallback={<div>Loading...</div>}>
+								<ProjectComponent
+									changeCursorAnimate={changeCursorAnimate}
+									leave={leave}
+									changeCursorText={changeCursorText}
+								/>
+							</Suspense>
+						}
+					/>
+					<Route
+						path='/contact'
+						element={
+							<Contact
 								changeCursorAnimate={changeCursorAnimate}
 								leave={leave}
 								changeCursorText={changeCursorText}
-							/>
+							></Contact>
 						}
 					/>
 				</Routes>

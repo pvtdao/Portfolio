@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.contact {
+    font-family: 'gilroylight';
+}
+
+input, textarea{
+    background-color: transparent;
+}
+
+.contact-email:focus ~ label,
+.contact-name:focus ~ label,
+.contact-email:not(:placeholder-shown) ~ label,
+.contact-name:not(:placeholder-shown) ~ label {
+    transform: translateY(-30px);
+    color: black
+}
+
+.input-underline {
+    @apply absolute bottom-[-1px] h-[2px] w-full;
+}
+
+.input-underline::after{
+    transition: all .3s ease;
+    @apply absolute h-full bg-[rgba(0,0,0,.5)] w-0 scale-x-0;
+    content: "";
+}
+
+
+.contact-email:focus ~ .input-underline::after,
+.contact-name:focus ~ .input-underline::after,
+.contact-email:not(:placeholder-shown) ~ .input-underline::after,
+.contact-name:not(:placeholder-shown) ~ .input-underline::after {
+    transform: scaleX(1);
+    width: 100%;
+}
+
+
+.input-underline.message-box {
+    @apply bottom-[2px];
+    transition: all .4s ease;
+}
+
+textarea:focus ~ .input-underline::after,
+textarea:not(:placeholder-shown) ~ .input-underline::after {
+    transform: scaleX(1);
+    width: 100%;
+}

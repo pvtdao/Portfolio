@@ -2,9 +2,9 @@ import React, { useRef } from 'react'
 import './project.css'
 import { motion } from 'framer-motion'
 
-const img1 = require('../../asset/images/72.jpg')
-const img2 = require('../../asset/images/82.jpg')
-const img3 = require('../../asset/images/74.jpg')
+const img1 = require('../../asset/images/wordle-2.jpg')
+const img2 = require('../../asset/images/pokedex-1.jpg')
+const img3 = require('../../asset/images/unify.jpg')
 const img4 = require('../../asset/images/75.jpg')
 const img5 = require('../../asset/images/76.png')
 const img6 = require('../../asset/images/77.jpg')
@@ -19,18 +19,18 @@ type ProjectPropsType = {
 
 const PROJECTS = [
 	{
-		src: img1,
-		title: 'Wordle',
-		href: '#'
-	},
-	{
 		src: img2,
 		title: 'Pokédex',
 		href: '#'
 	},
 	{
+		src: img1,
+		title: 'Wordle',
+		href: '#'
+	},
+	{
 		src: img3,
-		title: 'Fashionistore',
+		title: 'Unify',
 		href: '#'
 	},
 	{
@@ -140,55 +140,55 @@ function Project({
 			onMouseDown={(e) => handleOnDown(e)}
 			onMouseMove={(e) => handleOnMove(e)}
 			onMouseUp={(e) => handleOnMouseUp(e)}
-			className='project relative pt-[100px] m-0 select-none overflow-hidden h-screen w-screen'
+			className='project relative pt-[100px] m-0 select-none lg:overflow-hidden h-screen lg:w-screen'
 		>
-			<div className='container mx-auto flex justify-center'>
+			<div className='container mx-auto flex flex-col gap-40 lg:gap-0 justify-center'>
 				<h1
 					onMouseEnter={() => changeCursorAnimate('text-lg')}
 					onMouseLeave={leave}
-					className='hover:cursor-none inline-block text-center mt-[7vmin] text-[3rem] md:text-[6rem] font-bold'
+					className='hover:cursor-none w-max mx-auto inline-block text-center mt-[7vmin] text-[3rem] md:text-[5rem] font-bold'
 				>
 					Featured Projects
 				</h1>
-			</div>
-			<div
-				data-mouse-down-at='0'
-				data-prev-percentage='0'
-				ref={trackRef}
-				className='project-track'
-			>
-				{PROJECTS.map((p, idx) => {
-					return (
-						<motion.div
-							className='project-item cursor-none'
-							onMouseEnter={onImgHover}
-							onMouseLeave={leave}
-							key={idx}
-							initial='show'
-							whileHover='hide'
-						>
-							<motion.img
-								initial={{ opacity: 0.4 }}
-								whileHover={{ opacity: 1 }}
-								className='project-img h-full w-full object-cover select-none'
-								src={p.src}
-								draggable='false'
-							/>
+				<div
+					data-mouse-down-at='0'
+					data-prev-percentage='0'
+					ref={trackRef}
+					className='project-track'
+				>
+					{PROJECTS.map((p, idx) => {
+						return (
 							<motion.div
-								variants={titleVariants}
-								className='project-info absolute top-1/2 left-1/2 p-[1.5vmin] -translate-x-1/2 -translate-y-1/2'
+								className='project-item cursor-none'
+								onMouseEnter={onImgHover}
+								onMouseLeave={leave}
+								key={idx}
+								initial='show'
+								whileHover='hide'
 							>
-								<p className='font-bold text-shadow text-[3.5vmin] text-center'>
-									#{idx + 1}
-								</p>
-								<p className='font-semibold text-shadow text-[3vmin]'>
-									{p.title}
-								</p>
+								<motion.img
+									initial={{ opacity: 0.4 }}
+									whileHover={{ opacity: 1 }}
+									className='project-img h-full w-full object-cover select-none'
+									src={p.src}
+									draggable='false'
+								/>
+								<motion.div
+									variants={titleVariants}
+									className='project-info absolute top-1/2 left-1/2 p-[1.5vmin] -translate-x-1/2 -translate-y-1/2'
+								>
+									<p className='font-bold text-shadow text-[3.5vmin] text-center'>
+										#{idx + 1}
+									</p>
+									<p className='font-semibold text-shadow text-[3vmin]'>
+										{p.title}
+									</p>
+								</motion.div>
 							</motion.div>
-						</motion.div>
-						// <img src={p.src} alt={p.title} className="project-img"/>
-					)
-				})}
+							// <img src={p.src} alt={p.title} className="project-img"/>
+						)
+					})}
+				</div>
 			</div>
 		</section>
 	)

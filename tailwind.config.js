@@ -3,6 +3,9 @@ module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
 		extend: {
+			objectPosition: {
+				'full-center': "100% center"
+			},
 			keyframes: {
 				blinkText: {
 					'0%': {
