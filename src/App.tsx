@@ -13,7 +13,7 @@ const ProjectComponent = React.lazy(
 	() => import('./components/Project/Project')
 )
 
-// TODO: load image to slow (fix it)
+// TODO: Loading
 
 function App() {
 	const [hasIntro, setHasIntro] = useState<boolean>(true)
@@ -59,6 +59,14 @@ function App() {
 		setCursorAnimate('default')
 	}
 
+	function leaveMenu() {
+		setCursorText({
+			text: '',
+			fontSize: '1.6rem'
+		})
+		setCursorAnimate('default-menu')
+	}
+
 	return (
 		<React.Fragment>
 			<div
@@ -70,13 +78,14 @@ function App() {
 			</div>
 			<Intro introRef={introRef} setHasIntro={setHasIntro} />
 			<div
-				className={`wrapper bg-white min-h-screen relative ${
+				className={`wrapper bg-white relative ${
 					hasIntro ? 'hidden' : 'block'
 				}`}
 			>
 				<Header
 					changeCursorAnimate={changeCursorAnimate}
 					leave={leave}
+					leaveMenu={leaveMenu}
 				/>
 				<Routes>
 					<Route

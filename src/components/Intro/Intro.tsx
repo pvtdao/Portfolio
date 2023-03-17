@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { FaLongArrowAltRight } from 'react-icons/fa'
-import './intro.css'
 import { motion, Variants } from 'framer-motion'
-import { useMousePosition } from '../../hooks/useMousePosition'
+import React, { useState } from 'react'
 import { BrowserView } from 'react-device-detect'
+import { FaLongArrowAltRight } from 'react-icons/fa'
+import { useMousePosition } from '../../hooks/useMousePosition'
+import './intro.css'
 
 function Intro({
 	setHasIntro,

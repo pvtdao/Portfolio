@@ -177,15 +177,14 @@ function Project({
 									variants={titleVariants}
 									className='project-info absolute top-1/2 left-1/2 p-[1.5vmin] -translate-x-1/2 -translate-y-1/2'
 								>
-									<p className='font-bold text-shadow text-[3.5vmin] text-center'>
+									<p className='font-bold text-shadow text-[3rem] md:text-[3.5vmin] text-center'>
 										#{idx + 1}
 									</p>
-									<p className='font-semibold text-shadow text-[3vmin]'>
+									<p className='font-semibold text-shadow text-[2.5rem] md:text-[3vmin]'>
 										{p.title}
 									</p>
 								</motion.div>
 							</motion.div>
-							// <img src={p.src} alt={p.title} className="project-img"/>
 						)
 					})}
 				</div>

@@ -123,7 +123,7 @@ function Contact({
 									}
 									onMouseLeave={leave}
 									type='submit'
-									className='mt-[4rem] text-[1.8rem] lg:text-[2rem] border border-black px-10 py-2 lg:px-[3rem] lg:py-[1rem] hover:bg-black transition-all hover:text-white'
+									className='mt-[4rem] text-[1.8rem] lg:text-[2rem] border border-[rgba(0,0,0,.5)] px-10 py-2 lg:px-[3rem] lg:py-[1rem] hover:bg-black transition-all hover:text-white'
 								>
 									Send
 								</button>

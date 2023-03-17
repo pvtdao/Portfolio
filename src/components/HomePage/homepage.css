@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .homepage{
-    /* background-color: red; */
+    @apply h-full;
 }
 
 .header{
@@ -23,18 +23,14 @@
 }
 
 .introduction{
-    @apply relative min-h-[80vh] flex items-center justify-center;
+    @apply relative lg:min-h-[80vh] flex items-center justify-center h-[80%] xl:pt-[50px];
     font-family: "Montserrat", sans-serif;
 }
 
 .introduction-content{
-    @apply md:w-[70%] mx-auto;
+    @apply lg:w-[70%] mx-auto;
 }
 
 .content-text{
-    @apply text-[2rem] md:text-[3.5rem] pt-10 font-light leading-[3.5rem] md:leading-[5rem];
-}
-
-.scroll-icon {
-    @apply h-full mx-auto mt-10 p-[8px] w-8 h-8 border-b-black border-r-black border border-t-0 border-l-0 rotate-45;
+    @apply text-justify md:text-justify text-[2rem] lg:text-[2.5rem] xl:text-[3.5rem] pt-10 font-light leading-[3.5rem] lg:leading-[4.5rem] xl:leading-[5.5rem];
 }

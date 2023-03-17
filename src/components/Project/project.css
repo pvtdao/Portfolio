@@ -11,6 +11,12 @@
     transform: translate(0%, 0);
 }
 
+@media screen and (max-width: 1024px) {
+    .project-track {
+    transform: translate(0%, 0) !important;
+    }
+  }
+
 .project-track>.project-item {
     @apply lg:w-[38vmin] lg:h-[56vmin] relative select-none relative border-[0.5px] border-[rgba(0,0,0,.3)] lg:border-[rgba(0,0,0,.09)];
 }

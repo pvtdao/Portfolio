@@ -7,6 +7,18 @@ export function getVariants(mousePosition: { x: number; y: number }) {
 			y: mousePosition.y - 10,
 			zIndex: 100
 		},
+		hide: {
+			x: mousePosition.x - 10,
+			y: mousePosition.y - 10,
+			zIndex: 100,
+			display: 'none'
+		},
+		'default-menu': {
+			x: mousePosition.x - 10,
+			y: mousePosition.y - 10,
+			zIndex: 100,
+			backgroundColor: 'white'
+		},
 		logo: {
 			height: 100,
 			width: 100,
@@ -54,7 +66,7 @@ export function getVariants(mousePosition: { x: number; y: number }) {
 			x: mousePosition.x - 40,
 			y: mousePosition.y - 40,
 			backgroundColor: 'black',
-			fontSize: '2rem !important',
+			fontSize: '2rem !important'
 		}
 	}
 	return variants
