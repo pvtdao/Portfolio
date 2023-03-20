@@ -3,7 +3,7 @@ import './project.css'
 import { motion } from 'framer-motion'
 
 const fstore = require('../../asset/images/Fstore-01.jpg')
-const pokedex = require('../../asset/images/pokemania-01.jpg')
+const pokedex = require('../../asset/images/pokemania cover.jpg')
 const wordle = require('../../asset/images/wordle-cover.jpg')
 const unify = require('../../asset/images/unify.jpg')
 const dream = require('../../asset/images/dont ignore your dream-01.jpg')
@@ -94,7 +94,7 @@ function Project({
 		)) {
 			image.animate(
 				{
-					objectPosition: `${105 + nextPercentage}% center`
+					objectPosition: `${100 + nextPercentage}% center`
 				},
 				{ duration: 1200, fill: 'forwards' }
 			)
@@ -147,7 +147,7 @@ function Project({
 					{PROJECTS.map((p, idx) => {
 						return (
 							<motion.a
-							draggable="false"
+								draggable='false'
 								href={p.href}
 								target='_blank'
 								className='project-item cursor-none'
