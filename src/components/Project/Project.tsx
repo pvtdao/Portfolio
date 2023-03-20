@@ -147,6 +147,7 @@ function Project({
 					{PROJECTS.map((p, idx) => {
 						return (
 							<motion.a
+							draggable="false"
 								href={p.href}
 								target='_blank'
 								className='project-item cursor-none'
