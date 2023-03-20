@@ -2,14 +2,12 @@ import React, { useRef } from 'react'
 import './project.css'
 import { motion } from 'framer-motion'
 
-const img1 = require('../../asset/images/wordle-2.jpg')
-const img2 = require('../../asset/images/pokedex-1.jpg')
-const img3 = require('../../asset/images/unify.jpg')
-const img4 = require('../../asset/images/75.jpg')
-const img5 = require('../../asset/images/76.png')
-const img6 = require('../../asset/images/77.jpg')
-const img7 = require('../../asset/images/78.jpg')
-const img8 = require('../../asset/images/79.jpg')
+const fstore = require('../../asset/images/Fstore-01.jpg')
+const pokedex = require('../../asset/images/pokemania-01.jpg')
+const wordle = require('../../asset/images/wordle-cover.jpg')
+const unify = require('../../asset/images/unify.jpg')
+const dream = require('../../asset/images/dont ignore your dream-01.jpg')
+const mailam = require('../../asset/images/mailam english-01.jpg')
 
 type ProjectPropsType = {
 	changeCursorAnimate: (type: string) => void
@@ -19,44 +17,34 @@ type ProjectPropsType = {
 
 const PROJECTS = [
 	{
-		src: img2,
+		src: fstore,
+		title: 'Fashionistore',
+		href: 'https://fashionistore-pvtdao.vercel.app'
+	},
+	{
+		src: pokedex,
 		title: 'Pokédex',
-		href: '#'
+		href: 'https://pokedex-pvtdao.vercel.app'
 	},
 	{
-		src: img1,
+		src: wordle,
 		title: 'Wordle',
-		href: '#'
+		href: 'https://wordle-pvtdao.vercel.app'
 	},
 	{
-		src: img3,
+		src: unify,
 		title: 'Unify',
-		href: '#'
+		href: 'https://pvtdao.github.io/Unify/app/'
 	},
 	{
-		src: img4,
-		title: 'Wordle',
-		href: '#'
+		src: dream,
+		title: "Don't ignore your dream",
+		href: 'https://pvtdao.github.io/Dont-Ignore-Your-Dream/'
 	},
 	{
-		src: img5,
-		title: 'Wordle',
-		href: '#'
-	},
-	{
-		src: img6,
-		title: 'Wordle',
-		href: '#'
-	},
-	{
-		src: img7,
-		title: 'Wordle',
-		href: '#'
-	},
-	{
-		src: img8,
-		title: 'Wordle',
-		href: '#'
+		src: mailam,
+		title: 'Mai Lam English',
+		href: 'https://pvtdao.github.io/MaiLamEnglish/'
 	}
 ]
 
@@ -158,7 +146,9 @@ function Project({
 				>
 					{PROJECTS.map((p, idx) => {
 						return (
-							<motion.div
+							<motion.a
+								href={p.href}
+								target='_blank'
 								className='project-item cursor-none'
 								onMouseEnter={onImgHover}
 								onMouseLeave={leave}
@@ -184,7 +174,7 @@ function Project({
 										{p.title}
 									</p>
 								</motion.div>
-							</motion.div>
+							</motion.a>
 						)
 					})}
 				</div>

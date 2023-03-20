@@ -27,6 +27,8 @@
 
 .project-info {
    /* background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(0, 0, 0, .01)); */
+   width: 100%;
+   text-align: center;
 }
 
 .text-shadow {}

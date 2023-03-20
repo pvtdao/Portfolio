@@ -25,21 +25,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.custom-cursor-dark {
-  cursor: url("./asset/images/cursor_dark.png"), auto;
-  cursor: -webkit-image-set(url("./asset/images/cursor_dark.png") 1x,
-      url("./asset/images/cursor_dark.png") 2x),
-    auto;
-}
-
-
-.custom-cursor-white {
-  cursor: url("./asset/images/cursor_white.png"), auto;
-  cursor: -webkit-image-set(url("./asset/images/cursor_white.png") 4 12,
-      url("./asset/images/cursor_white.png") 4 15),
-    auto;
-}
-
 @font-face {
   font-family: 'K26';
   src: url('./asset/fonts/K26/K26ToyBlocks123.ttf') format('opentype');

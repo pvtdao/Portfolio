@@ -27,16 +27,6 @@
     transition: all 0.5s ease;
 }
 
-.intro__text:hover{
-    /* cursor: url("../../asset/images/cursor_dark.png")
-    16 0,  auto;  */
-
-    /* -webkit-text-stroke: 2px #000;
-    -webkit-text-fill-color: #fff; 
-    -pie-transition: all 0.5s ease-out; 
-    transition: all 0.5s ease-out; */
-}
-
 .part-1 {
     @apply hidden md:block animate-blink;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
